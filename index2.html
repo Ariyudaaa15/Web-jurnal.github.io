@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website OJS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Menambahkan Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* CSS internal */
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+
+        }
+
+        .banner {
+            background-color: #343a40;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .banner h1 {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .search-section {
+            background-color: #e9ecef;
+            padding: 50px 0;
+        }
+
+        .card {
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            /* Memastikan card memiliki tinggi yang seragam */
+        }
+
+        .card-img-top {
+            height: 200px;
+            /* Sesuaikan dengan ukuran gambar yang diinginkan */
+            object-fit: cover;
+            /* Agar gambar terpotong dengan baik jika tidak pas */
+        }
+
+        .card-body {
+            padding: 20px;
+            /* Menambah ruang dalam card */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* Menjaga jarak antar elemen di dalam card */
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .card-text {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+            font-size: 16px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+
+        .btn {
+            margin-top: auto;
+            /* Tombol berada di bagian bawah */
+        }
+
+        .about-section,
+        .contact-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .about-section h2,
+        .contact-section h2 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .social-icons a:hover {
+            color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">JPPIIPA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#journal">Journal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">SAMBUNGKAN KE WEB 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index3.html">SAMBUNGKAN KE WEB 3</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="container">
+            <h1>Welcome to JPPIIPA</h1>
+            <p>Journal for Public Policy and Integrated Area</p>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section text-center">
+        <div class="container">
+            <form class="d-flex justify-content-center" id="searchForm">
+                <input class="form-control me-2" type="search" placeholder="Search articles" aria-label="Search"
+                    id="searchInput" style="max-width: 500px;">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section text-center">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>
+                JPPIIPA is a journal dedicated to public policy and integrated area studies. We aim to provide a
+                platform for researchers and academics to share their work and contribute to the development of policy
+                and area studies across various fields.
+            </p>
+        </div>
+    </section>
+
+    <!-- Journal Articles Section -->
+    <!-- Journal Articles Section -->
+    <section class="articles py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Recent Articles</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./artikel (2).jpg" class="card-img-top" alt="Article 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Article Title 1</h5>
+                            <p class="card-text">Brief description of the article. This journal explores the impact of
+                                public policy on urban development...</p>
+                            <ul>
+                                <li><strong>Author:</strong> Dr. John Doe</li>
+                                <li><strong>Publisher:</strong> Academic Press</li>
+                                <li><strong>Published Year:</strong> 2024</li>
+                                <li><strong>Journal Name:</strong> Journal of Public Policy</li>
+                                <li><strong>DOI:</strong> 10.1234/jpp2024.5678</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./artikel (3).jpg" class="card-img-top" alt="Article 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Article Title 2</h5>
+                            <p class="card-text">In-depth analysis of integrated area studies and its significance in
+                                policy-making...</p>
+                            <ul>
+                                <li><strong>Author:</strong> Dr. Jane Smith</li>
+                                <li><strong>Publisher:</strong> Global Scholars</li>
+                                <li><strong>Published Year:</strong> 2023</li>
+                                <li><strong>Journal Name:</strong> International Journal of Area Studies</li>
+                                <li><strong>DOI:</strong> 10.5678/ijas2023.1234</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./artikel (1).jpg" class="card-img-top" alt="Article 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Article Title 3</h5>
+                            <p class="card-text">A comprehensive study on the evolution of urban policy and its effects
+                                on economic development...</p>
+                            <ul>
+                                <li><strong>Author:</strong> Dr. Richard Lee</li>
+                                <li><strong>Publisher:</strong> City Journal Publishers</li>
+                                <li><strong>Published Year:</strong> 2022</li>
+                                <li><strong>Journal Name:</strong> Urban Policy Review</li>
+                                <li><strong>DOI:</strong> 10.9876/upr2022.6543</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section text-center">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or would like to get in touch, feel free to contact us:</p>
+            <p>Email: info@jppiipa.com</p>
+            <p>Phone: (123) 456-7890</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container text-center">
+            <p>&copy; 2025 JPPIIPA - All Rights Reserved</p>
+            <div class="social-icons mb-3">
+                <a href="https://www.facebook.com" target="_blank" class="text-white mx-3">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" class="text-white mx-3">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" class="text-white mx-3">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" class="text-white mx-3">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://wa.me/087784798521" target="_blank" class="text-white mx-3">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.youtube.com" target="_blank" class="text-white mx-3">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+            <p>Follow us on social media for more updates!</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // JavaScript for search functionality
+        document.getElementById('searchForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const query = document.getElementById('searchInput').value;
+            alert('Searching for: ' + query);
+        });
+    </script>
+</body>
+
+</html>
