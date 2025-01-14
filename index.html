@@ -4,489 +4,307 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jurnal Penelitian Kesehatan Medis</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
+    <title>Babal Nursing Research</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            line-height: 1.6;
+        }
+
+        .navbar {
             background-color: #f8f9fa;
-            margin: 0;
-            padding: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        /* Navbar Style */
-        nav {
-            background-color: #343a40;
-            /* Navbar Dark Color */
+        .navbar-nav .nav-link {
+            color: #555;
         }
 
-        nav a {
+        .navbar-nav .nav-link:hover {
+            color: #0056b3;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./banner.jpg') no-repeat center center/cover;
+            height: 350px;
             color: white;
-            font-size: 18px;
-            margin-right: 20px;
-        }
-
-        nav a:hover {
-            color: #ffd700;
-        }
-
-        /* Navbar Toggler (Hamburger Menu) */
-        .navbar-toggler {
-            border: none;
-        }
-
-        .navbar-toggler-icon {
-            background-color: transparent;
-            /* Transparan background untuk ikon */
-            width: 30px;
-            height: 30px;
-        }
-
-        .navbar-toggler-icon span {
-            display: block;
-            background-color: #fff;
-            /* Warna garis putih lembut */
-            width: 25px;
-            height: 3px;
-            margin: 5px auto;
-            border-radius: 2px;
-        }
-
-        /* Parallax Background */
-        .hero {
-            background-image: url('./bg.jpg');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            color: white;
-            padding: 100px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            height: 50vh;
         }
 
-        .hero h1 {
-            font-size: 40px;
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
 
-        .hero p {
-            font-size: 20px;
+        .hero-section p {
+            font-size: 1.2rem;
         }
 
-        /* Jurnal Section */
-        .jurnal-section {
-            padding: 40px 0;
+        .btn-hero {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
         }
 
-        .card {
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+        .btn-hero:hover {
+            background-color: #003d80;
+            color: #fff;
         }
 
-        .card-img-top {
-            border-radius: 10px 10px 0 0;
+        .logo-img {
+            width: 60px;
+            /* Ukuran seragam untuk semua logo */
+            height: auto;
+            /* Menjaga proporsi gambar */
+            max-width: 100%;
+            /* Agar tidak keluar dari card */
+            object-fit: contain;
+            /* Pastikan gambar tidak terpotong */
+        }
+
+        .logos-section {
+            gap: 10px;
+            /* Jarak antar logo */
         }
 
         .card-body {
-            padding: 20px;
+            overflow: hidden;
+            /* Pastikan isi tidak meluap dari card */
         }
 
-        .card-title {
-            font-size: 22px;
-            margin-bottom: 15px;
-        }
-
-        .card-text {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        .btn-primary {
-            background-color: #004d99;
-            border-color: #004d99;
-        }
-
-        .btn-primary:hover {
-            background-color: #003366;
-            border-color: #003366;
-        }
-
-        /* Form Kontak */
-        .form-section {
-            padding: 50px 0;
-            background-color: #f9f9f9;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        }
-
-        .form-section .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-section h2 {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .form-section .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-section label {
-            font-size: 16px;
-            font-weight: 300;
-            color: #333;
-        }
-
-        .form-section .form-control {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-            box-sizing: border-box;
-        }
-
-        .form-section .form-control:focus {
-            border-color: #007bff;
-            outline: none;
-        }
-
-        .form-section button {
-            width: 100%;
-            padding: 12px;
-            background-color: #007bff;
-            color: #fff;
-            font-size: 16px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .form-section button:hover {
-            background-color: #0056b3;
-        }
-
-        @media (max-width: 768px) {
-            .form-section .container {
-                padding: 15px;
-            }
-        }
-
-
-
-        /* Footer Section */
-        footer {
-            background-color: #343a40;
-            /* Dark background */
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
 
         .content-section {
-            margin-top: 40px;
+            padding: 50px 0;
         }
 
-        .form-section {
-            background-color: #e9ecef;
-            padding: 30px;
-            border-radius: 10px;
+        .img-jurnal {
+            margin-top: 3rem;
+            height: 250px;
+            object-fit: cover;
+            margin-left: 1.2rem;
         }
 
-        .form-section h2 {
-            margin-bottom: 20px;
+        .logos-section {
+            display: flex;
+            justify-content: start;
+            gap: 15px;
+            margin-top: 10px;
         }
 
-        .form-section textarea {
-            width: 100%;
-            height: 150px;
+        .logos-section img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
         }
 
-        .form-section input[type="text"],
-        .form-section input[type="email"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
+        .logos-section img:hover {
+            transform: scale(1.1);
+            transition: all 0.3s ease;
         }
 
-        /* Footer Styling */
-        footer h5 {
-            font-weight: bold;
-            margin-bottom: 15px;
+        .card-body {
+            padding: 15px;
         }
 
-        footer a {
-            color: #ffffff;
-            text-decoration: none;
-            transition: color 0.3s ease;
+        .row.g-0 .col-md-8 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 20px;
         }
 
-        footer a:hover {
-            color: #ffc107;
+        .btn-view {
+            background-color: #28a745;
+            color: white;
         }
 
-        footer .d-flex a {
-            font-size: 20px;
-            margin-right: 15px;
+        .btn-view:hover {
+            background-color: #218838;
         }
 
-        footer .d-flex a:last-child {
-            margin-right: 0;
+        .btn-download {
+            background-color: #dc3545;
+            color: white;
         }
 
-        footer .text-center {
-            border-top: 1px solid #495057;
-            padding-top: 15px;
-            margin-top: 20px;
-            font-size: 14px;
+        .btn-download:hover {
+            background-color: #c82333;
         }
 
-        @media (max-width: 768px) {
-            footer .row>div {
-                margin-bottom: 20px;
-            }
+        .card:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+        }
 
-            .navbar-nav {
-                text-align: center;
-            }
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 30px 0;
+        }
 
-            .navbar-toggler-icon {
-                background-color: transparent;
-            }
+        .footer-icons i {
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+
+        .footer-icons i:hover {
+            color: #17a2b8;
+        }
+
+        /* Custom Style for Journal Description and References */
+        .journal-description {
+            font-size: 10rem;
+            line-height: 1.2;
+        }
+
+        .logos-section img {
+            width: 10rem;
+            height: 10rem;
         }
     </style>
 </head>
 
 <body>
-
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-            <a class="navbar-brand" href="#">Jurnal Penelitian Kesehatan</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon">
-                    <!-- 3 garis di sini -->
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </span>
+            <a class="navbar-brand" href="#">
+                <img src="./Logo-Web-Jurnal.png" alt="Logo BNR" style="width: 60px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Beranda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="tentang-kami.html">Tentang Kami</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Jurnal</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Kontak</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index2.html">SAMBUNGKAN KE WEB 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index3.html">SAMBUNGKAN KE WEB 3</a>
-                    </li>
-
-                    <!-- Search Button on Small Screen -->
-                    <li class="nav-item">
-                        <form class="form-inline" action="search_results.html" method="GET">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Cari..." aria-label="Search"
-                                name="query">
-                            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Cari</button>
-                        </form>
-                    </li>
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#articles">Articles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
+                <!-- Search Bar -->
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-light" type="submit"><i class="fas fa-search"></i></button>
+                </form>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section with Parallax -->
-    <section class="hero">
-        <div class="container">
-            <h1>Selamat Datang di Jurnal Penelitian Kesehatan</h1>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div>
+            <h1>Welcome to BNR</h1>
+            <p>Enhancing Healthcare Through Research and Education</p>
+            <a href="#articles" class="btn-hero">Explore Articles</a>
         </div>
-    </section>
-
-
-    <!-- Tentang Kami Section -->
-    <section class="content-section">
-        <div class="container">
-            <h2 class="text-center mb-4">Tentang Kami</h2>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-section">
-                        <p>Jurnal Penelitian Kesehatan ini bertujuan untuk menyebarluaskan hasil penelitian terbaru di
-                            bidang kesehatan medis yang dilakukan oleh dosen-dosen terkemuka. Kami berfokus pada
-                            penelitian yang memberikan dampak positif terhadap kemajuan bidang kesehatan.</p>
-
-                        <p>Di setiap edisi jurnal ini, kami menampilkan berbagai topik penelitian yang sangat relevan
-                            dengan
-                            isu-isu kesehatan terkini. Dosen-dosen kami memiliki keahlian dalam berbagai bidang,
-                            termasuk
-                            epidemiologi, kesehatan masyarakat, kesehatan mental, nutrisi, serta inovasi dalam
-                            pengobatan
-                            dan terapi. Kami sangat menghargai kontribusi mereka yang selalu berusaha memberikan yang
-                            terbaik untuk masyarakat melalui riset yang dilakukan.</p>
-
-                        <p>Selain itu, jurnal ini juga merupakan wadah bagi para peneliti muda dan mahasiswa untuk
-                            mempublikasikan
-                            temuan-temuan mereka dalam bidang kesehatan. Kami berharap, dengan berbagi pengetahuan dan
-                            pengalaman, kami dapat berkontribusi pada peningkatan kualitas kehidupan melalui penelitian
-                            yang
-                            berbasis bukti.</p>
-
-                        <p>Beberapa topik utama yang sering muncul dalam penelitian kami meliputi:</p>
-                        <ul>
-                            <li>Pengaruh pola hidup terhadap pencegahan penyakit jantung dan stroke</li>
-                            <li>Studi tentang efektivitas vaksinasi dan program imunisasi</li>
-                            <li>Hubungan antara diet sehat dan penurunan risiko kanker</li>
-                            <li>Intervensi psikologis dalam penanganan depresi dan kecemasan pada pasien</li>
-                            <li>Inovasi dalam pengobatan diabetes dan penyakit kronis lainnya</li>
-                        </ul>
-
-                        <p>Kami juga terus berusaha untuk menjadi sumber inspirasi bagi generasi berikutnya dalam bidang
-                            penelitian
-                            kesehatan. Melalui penelitian yang lebih mendalam, kami berharap dapat memberikan solusi
-                            yang lebih
-                            efektif dan aplikasi praktis untuk perbaikan sistem kesehatan global.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
+    </div>
     <!-- Jurnal Section -->
-    <section class="jurnal-section">
+
+    <div id="jurnal-terbaru" class="content-section">
         <div class="container">
-            <h2 class="text-center mb-4">Jurnal Penelitian Terbaru</h2>
-            <div class="row">
-                <!-- Card 1 -->
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="./artikel (1).jpg" class="card-img-top" alt="Gambar Jurnal 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Studi Dampak COVID-19 pada Kesehatan Mental</h5>
-                            <p class="card-text">Penelitian ini membahas dampak pandemi terhadap kesehatan mental
-                                masyarakat, dengan fokus pada stres dan kecemasan yang meningkat selama pandemi...</p>
-                            <a href="jurnal_detail_1.html" class="btn btn-primary">Baca Selengkapnya</a>
+            <h2 class="text-center mb-4">Jurnal Terbaru</h2>
+            <div class="row g-4">
+                <!-- Jurnal & Penjualan Jurnal -->
+                <div class="col-md-10"> <!-- Perbesar kolom untuk gambar jurnal -->
+                    <div class="card shadow-sm">
+                        <div class="row g-0">
+                            <!-- Gambar Jurnal & Penjelasan -->
+                            <div class="col-md-4">
+                                <img src="./artikel (2).jpg" class="img-jurnal card-img" alt="Gambar Jurnal">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Keperawatan Modern: Transformasi Perawatan</h5>
+                                    <p><strong>Tahun Publikasi:</strong> 2025</p>
+                                    <p><strong>Penulis:</strong> Dr. Budi Santoso</p>
+                                    <p><strong>Penerbit:</strong> BNR Publishing</p>
+                                    <p><strong>Abstrak:</strong> Jurnal ini membahas pendekatan modern dalam praktik
+                                        keperawatan, mulai dari teknologi terbaru, inovasi dalam pengobatan, hingga
+                                        perubahan dalam pola pikir para tenaga kesehatan. Artikel ini sangat relevan
+                                        untuk mahasiswa keperawatan, dosen, dan praktisi kesehatan yang ingin
+                                        memperbarui
+                                        wawasan mereka terkait tren terkini dalam dunia medis.</p>
+                                    <p><strong>Manfaat:</strong></p>
+                                    <ul>
+                                        <li>Meningkatkan pemahaman tentang teknologi terkini dalam keperawatan.</li>
+                                        <li>Membantu pengembangan kurikulum pendidikan kesehatan.</li>
+                                        <li>Memberikan panduan praktis untuk penerapan inovasi di rumah sakit atau
+                                            klinik.</li>
+                                    </ul>
+                                    <p><strong>Relevansi untuk Pendidikan:</strong></p>
+                                    <p>Jurnal ini dapat menjadi referensi utama dalam penyusunan tugas akhir, tesis,
+                                        atau
+                                        penelitian lanjutan di bidang keperawatan dan kesehatan. Topik-topik seperti
+                                        inovasi teknologi, efisiensi pelayanan, dan pengembangan profesional sangat
+                                        berguna untuk mendukung pembelajaran berbasis bukti.</p>
+                                    <a href="jurnal1.pdf" class="btn btn-success mb-2" target="_blank">View</a>
+                                    <a href="jurnal1.pdf" class="btn btn-warning mb-2" download>Download</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="./artikel (2).jpg" class="card-img-top" alt="Gambar Jurnal 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Penelitian Vaksinasi dan Imunitas Masyarakat</h5>
-                            <p class="card-text">Analisis vaksinasi dan efektivitasnya dalam mencegah penyebaran
-                                penyakit menular, serta dampaknya terhadap kekebalan tubuh masyarakat...</p>
-                            <a href="jurnal_detail_2.html" class="btn btn-primary">Baca Selengkapnya</a>
+
+
+                <!-- Referensi Jurnal (Google Scholar, Sinta, Garuda) -->
+                <!-- Referensi Jurnal (Google Scholar, Sinta, Garuda, dan Mendeley) -->
+                <div class="col-md-2"> <!-- Perkecil kolom untuk referensi -->
+                    <div class="card shadow-sm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Referensi dan Template</h5>
+                            <p><strong>Referensi Jurnal:</strong></p>
+                            <div class="logos-section mb-3 d-flex justify-content-center flex-wrap">
+                                <img src="./Google-Emblema.png" alt="Google Scholar" class="logo-img mb-2">
+                                <img src="./sinta_logo-1900x700_c-1568x578-1.png" alt="Sinta" class="logo-img mb-2">
+                                <img src="./Garuda1.png" alt="Garuda" class="logo-img mb-2">
+                                <img src="./kisspng-mendeley-logo-computer-software-reference-manageme-5c83a86634bd71.905340441552132198216.png"
+                                    alt="Mendeley" class="logo-img mb-2">
+                            </div>
+                            <p class="text-muted">
+                                Halaman ini dirancang untuk membantu Anda menemukan referensi terpercaya untuk
+                                penelitian atau karya ilmiah. Unduh template jurnal untuk mempermudah penyusunan dokumen
+                                Anda.
+                            </p>
+                            <a href="template-jurnal.docx" class="btn btn-download mb-2" download>Download Template</a>
+                            <p class="text-muted small">Template ini kompatibel dengan format umum jurnal akademik.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="./artikel (3).jpg" class="card-img-top" alt="Gambar Jurnal 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Peran Nutrisi dalam Pemulihan Pasien</h5>
-                            <p class="card-text">Penelitian yang meneliti hubungan antara pola makan dan proses
-                                pemulihan pasien pasca-operasi kenapa malah beitu yaa tolong bantu...</p>
-                            <a href="jurnal_detail_3.html" class="btn btn-primary">Baca Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
+
+
             </div>
         </div>
-    </section>
-
-    <!-- Kontak Form -->
-    <section class="form-section">
-        <div class="container">
-            <h2 class="text-center mb-4">Kontak Kami</h2>
-            <form action="process_contact_form.php" method="POST">
-                <div class="form-group">
-                    <label for="name">Nama Lengkap</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Pesan</label>
-                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Kirim Pesan</button>
-            </form>
-        </div>
-    </section>
+    </div>
 
 
-    <!-- Footer Section -->
+
     <!-- Footer -->
-    <footer class="bg-dark text-white py-5">
-        <div class="container">
+    <footer class="bg-dark text-light mt-5">
+        <div class="container py-4">
             <div class="row">
-                <!-- Kontak Kami -->
-                <div class="col-md-4">
-                    <h5>Kontak Kami</h5>
-                    <p><i class="fas fa-phone-alt"></i> 081936732708</p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:jpmpi@unram.ac.id"
-                            class="text-white">jpmpi@unram.ac.id</a></p>
-                    <p><i class="fas fa-globe"></i> <a href="https://www.jpmpi.unram.ac.id"
-                            class="text-white">www.jpmpi.unram.ac.id</a></p>
+                <div class="col-md-6">
+                    <p class="mb-2"><strong>Babal Nursing Research</strong></p>
+                    <p>Enhancing Healthcare Through Research and Education</p>
                 </div>
-
-                <!-- Media Sosial -->
-                <div class="col-md-4">
-                    <h5>Ikuti Kami</h5>
-                    <div class="d-flex" style="margin-left: 5rem;">
-                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-youtube fa-lg"></i></a>
-                        <a href="mailto:jpmpi@unram.ac.id" class="text-white"><i class="fas fa-envelope fa-lg"></i></a>
-                    </div>
+                <div class="col-md-6 text-md-end">
+                    <p>&copy; 2025 Babal Nursing Research. All Rights Reserved.</p>
+                    <p>Designed with ♥ by BNR Team</p>
                 </div>
-
-                <!-- Tentang Kami -->
-                <div class="col-md-4">
-                    <h5>Tentang Kami</h5>
-                    <p>Kami adalah platform yang bertujuan memberikan solusi inovatif dan berkontribusi untuk
-                        masyarakat.</p>
-                </div>
-            </div>
-
-            <!-- Copyright -->
-            <div class="text-center mt-4">
-                <p>&copy; 2025 Jpmpi Unram. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Script -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

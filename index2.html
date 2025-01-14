@@ -4,297 +4,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website OJS</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Menambahkan Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Journal & Research Platform</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* CSS internal */
         body {
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
         }
 
-        .banner {
+        .navbar {
             background-color: #343a40;
-            color: white;
-            padding: 80px 0;
-            text-align: center;
         }
 
-        .banner h1 {
-            font-size: 50px;
-            font-weight: bold;
+        .navbar-brand,
+        .nav-link {
+            color: white !important;
         }
 
-        .search-section {
-            background-color: #e9ecef;
-            padding: 50px 0;
-        }
-
-        .card {
-            margin-bottom: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            height: 100%;
-            /* Memastikan card memiliki tinggi yang seragam */
-        }
-
-        .card-img-top {
-            height: 200px;
-            /* Sesuaikan dengan ukuran gambar yang diinginkan */
-            object-fit: cover;
-            /* Agar gambar terpotong dengan baik jika tidak pas */
-        }
-
-        .card-body {
-            padding: 20px;
-            /* Menambah ruang dalam card */
+        .hero-section {
+            background: url('https://via.placeholder.com/1920x500') no-repeat center center/cover;
+            height: 400px;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            /* Menjaga jarak antar elemen di dalam card */
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
         }
 
-        .card-title {
-            font-size: 18px;
-            font-weight: bold;
+        .hero-section::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
         }
 
-        .card-text {
-            font-size: 14px;
-            margin-bottom: 10px;
+        .hero-section h1,
+        .hero-section p {
+            position: relative;
+            z-index: 2;
         }
 
-        ul {
-            padding-left: 20px;
-            font-size: 16px;
+        .section-header {
+            text-align: center;
+            margin-bottom: 30px;
         }
 
-        ul li {
-            margin-bottom: 5px;
-        }
-
-        .btn {
-            margin-top: auto;
-            /* Tombol berada di bagian bawah */
-        }
-
-        .about-section,
-        .contact-section {
-            padding: 80px 0;
-            background-color: #f8f9fa;
-        }
-
-        .about-section h2,
-        .contact-section h2 {
-            font-size: 36px;
-            font-weight: bold;
+        .card:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease;
         }
 
         footer {
-            background-color: #343a40;
+            background-color: #212529;
             color: white;
-            text-align: center;
             padding: 20px 0;
         }
 
-        .social-icons a {
-            margin: 0 10px;
-            color: white;
+        footer a {
+            color: #17a2b8;
             text-decoration: none;
-            font-size: 20px;
         }
 
-        .social-icons a:hover {
-            color: #ddd;
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 
 <body>
-
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">JPPIIPA</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">Journal & Research</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#journal">Journal</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">SAMBUNGKAN KE WEB 1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index3.html">SAMBUNGKAN KE WEB 3</a>
-                    </li>
-
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#journals">Journals</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
+                <form class="d-flex ms-auto">
+                    <input class="form-control me-2" type="search" placeholder="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
             </div>
         </div>
     </nav>
 
-    <!-- Banner Section -->
-    <section class="banner">
-        <div class="container">
-            <h1>Welcome to JPPIIPA</h1>
-            <p>Journal for Public Policy and Integrated Area</p>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div>
+            <h1>Welcome to Journal & Research</h1>
+            <p>Enhance your knowledge with trusted articles and publications.</p>
         </div>
-    </section>
-
-    <!-- Search Section -->
-    <section class="search-section text-center">
-        <div class="container">
-            <form class="d-flex justify-content-center" id="searchForm">
-                <input class="form-control me-2" type="search" placeholder="Search articles" aria-label="Search"
-                    id="searchInput" style="max-width: 500px;">
-                <button class="btn btn-primary" type="submit">Search</button>
-            </form>
-        </div>
-    </section>
+    </div>
 
     <!-- About Section -->
-    <section id="about" class="about-section text-center">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>
-                JPPIIPA is a journal dedicated to public policy and integrated area studies. We aim to provide a
-                platform for researchers and academics to share their work and contribute to the development of policy
-                and area studies across various fields.
-            </p>
-        </div>
-    </section>
+    <div id="about" class="container my-5">
+        <h2 class="section-header">About Us</h2>
+        <p>
+            We provide a reliable platform for sharing and accessing the latest academic articles and nursing research.
+            Our goal is to support professionals, students, and enthusiasts in their pursuit of knowledge and
+            excellence.
+        </p>
+    </div>
 
-    <!-- Journal Articles Section -->
-    <!-- Journal Articles Section -->
-    <section class="articles py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Recent Articles</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="./artikel (2).jpg" class="card-img-top" alt="Article 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Article Title 1</h5>
-                            <p class="card-text">Brief description of the article. This journal explores the impact of
-                                public policy on urban development...</p>
-                            <ul>
-                                <li><strong>Author:</strong> Dr. John Doe</li>
-                                <li><strong>Publisher:</strong> Academic Press</li>
-                                <li><strong>Published Year:</strong> 2024</li>
-                                <li><strong>Journal Name:</strong> Journal of Public Policy</li>
-                                <li><strong>DOI:</strong> 10.1234/jpp2024.5678</li>
-                            </ul>
-                            <a href="#" class="btn btn-primary">Read More</a>
-                        </div>
+    <!-- Journals Section -->
+    <div id="journals" class="container my-5">
+        <h2 class="section-header">Latest Journals</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Journal 1">
+                    <div class="card-body">
+                        <h5 class="card-title">E-Jurnal Manajemen</h5>
+                        <p class="card-text">
+                            [e-ISSN 2302-8912] adalah jurnal ilmiah elektronik yang diterbitkan secara online sebulan
+                            sekali.
+                            Jurnal ini bertujuan untuk meningkatkan kualitas keilmuan dan menyebarluaskan ilmu
+                            pengetahuan
+                            di bidang manajemen kepada akademisi, mahasiswa, dan praktisi.
+                        </p>
+                        <a href="#" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="./artikel (3).jpg" class="card-img-top" alt="Article 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Article Title 2</h5>
-                            <p class="card-text">In-depth analysis of integrated area studies and its significance in
-                                policy-making...</p>
-                            <ul>
-                                <li><strong>Author:</strong> Dr. Jane Smith</li>
-                                <li><strong>Publisher:</strong> Global Scholars</li>
-                                <li><strong>Published Year:</strong> 2023</li>
-                                <li><strong>Journal Name:</strong> International Journal of Area Studies</li>
-                                <li><strong>DOI:</strong> 10.5678/ijas2023.1234</li>
-                            </ul>
-                            <a href="#" class="btn btn-primary">Read More</a>
-                        </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Journal 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Topics in Management</h5>
+                        <p class="card-text">
+                            Membahas berbagai topik, seperti Manajemen Sumber Daya Manusia, Manajemen Keuangan,
+                            Manajemen Operasi, dan Manajemen Strategis. Artikel dapat berupa kajian empiris atau
+                            teoritis.
+                        </p>
+                        <a href="#" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="./artikel (1).jpg" class="card-img-top" alt="Article 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Article Title 3</h5>
-                            <p class="card-text">A comprehensive study on the evolution of urban policy and its effects
-                                on economic development...</p>
-                            <ul>
-                                <li><strong>Author:</strong> Dr. Richard Lee</li>
-                                <li><strong>Publisher:</strong> City Journal Publishers</li>
-                                <li><strong>Published Year:</strong> 2022</li>
-                                <li><strong>Journal Name:</strong> Urban Policy Review</li>
-                                <li><strong>DOI:</strong> 10.9876/upr2022.6543</li>
-                            </ul>
-                            <a href="#" class="btn btn-primary">Read More</a>
-                        </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Journal 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Guidelines for Submission</h5>
+                        <p class="card-text">
+                            Pastikan naskah Anda sesuai dengan template dan pedoman penulis. Semua naskah akan melalui
+                            proses review sebelum diterbitkan.
+                        </p>
+                        <a href="#" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section text-center">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or would like to get in touch, feel free to contact us:</p>
-            <p>Email: info@jppiipa.com</p>
-            <p>Phone: (123) 456-7890</p>
-        </div>
-    </section>
+    <div id="contact" class="container my-5">
+        <h2 class="section-header">Contact Us</h2>
+        <p>If you have any questions or feedback, feel free to reach out:</p>
+        <ul>
+            <li>Email: support@journalresearch.com</li>
+            <li>Phone: +62 123 456 789</li>
+            <li>Address: Academic Street No. 1, Jakarta</li>
+        </ul>
+    </div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white pt-5 pb-3">
-        <div class="container text-center">
-            <p>&copy; 2025 JPPIIPA - All Rights Reserved</p>
-            <div class="social-icons mb-3">
-                <a href="https://www.facebook.com" target="_blank" class="text-white mx-3">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://twitter.com" target="_blank" class="text-white mx-3">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://www.instagram.com" target="_blank" class="text-white mx-3">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.linkedin.com" target="_blank" class="text-white mx-3">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://wa.me/087784798521" target="_blank" class="text-white mx-3">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://www.youtube.com" target="_blank" class="text-white mx-3">
-                    <i class="fab fa-youtube"></i>
-                </a>
-            </div>
-            <p>Follow us on social media for more updates!</p>
-        </div>
+    <footer class="text-center">
+        <p>&copy; 2025 Journal & Research. All Rights Reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // JavaScript for search functionality
-        document.getElementById('searchForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const query = document.getElementById('searchInput').value;
-            alert('Searching for: ' + query);
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
